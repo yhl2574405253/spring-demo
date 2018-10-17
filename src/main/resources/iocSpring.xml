@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+    <!--给属性赋值 相当于java的set方法-->
+    <bean id="a" class="demo01.iocDemo.A">
+        <property name="id" value="1"></property>
+        <property name="name" value="张三"></property>
+    </bean>
+    <!--对象赋值-->
+    <bean id="b" class="demo01.iocDemo.B">prototype
+        <property name="name" value="李四"></property>
+        <property name="a" ref="a"></property>
+    </bean>
+
+    <!-- 构造器注入 可以根据下标(index) 变量名(name) 类型(type="java.lang.String") 来进行赋值 -->
+    <bean id="c" class="demo01.iocDemo.C">
+        <constructor-arg index="0" value="1"></constructor-arg>
+        <constructor-arg name="name" value="王五"></constructor-arg>
+        <constructor-arg type="demo01.iocDemo.B" ref="b"></constructor-arg>
+    </bean>
+</beans>

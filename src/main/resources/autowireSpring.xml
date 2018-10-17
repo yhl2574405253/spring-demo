@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+
+    <!--byName根据名称来进行装配 byType根据类型进行装配 -->
+    <bean id="a" class="demo01.autowire.A">
+        <property name="name" value="李四"></property>
+    </bean>
+
+    <!--<bean id="b" class="demo01.autowire.B" autowire="byName"></bean>-->
+    <bean id="b" class="demo01.autowire.B" autowire="byType"></bean>
+
+</beans>

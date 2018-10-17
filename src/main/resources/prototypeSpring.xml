@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+	<!-- spring中bean默认的都是单实例
+		 singleton 单例 默认值   容器初始化时实例化
+		 prototype 多例   getBean对象 实例化-->
+
+
+	<bean id="a" class="demo01.prototype.A" scope="singleton"></bean>
+</beans>
