@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+	http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-4.2.xsd
+	">
+   
+   <context:component-scan base-package="demo02.mvc" >
+     	<!-- spring默认扫描自带注解 比如 Controller Service... 不希望扫描 排除他
+     		type="assignable" 排除指定的类
+     		type="annotion" 表示排除某些带有指定注解的类
+     	-->
+   		<!--<context:exclude-filter type="assignable" expression="cn.et.day2.mvc.controller.MyController"/>-->
+
+   		<!-- 包含一些指定的类 或者注解 -->   
+   		 <!-- <context:include-filter type="annotation" expression="cn.et.day2.mvc.TTT"/>  -->
+   </context:component-scan>
+
+	<!--扫描 jdbc.properties -->
+	<context:property-placeholder location="classpath:demo02/mvc/jdbc.properties"/>
+
+	<!--配置连接数据库的四要素-->
+   <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	   <property name="url" value="${url}" ></property>
+	   <property name="username" value="${username1}" ></property>
+	   <property name="password" value="${password1}" ></property>
+	   <property name="driverClassName" value="${driverClass}" ></property>
+   </bean>
+   
+   <bean id="template" class="org.springframework.jdbc.core.JdbcTemplate">
+   		<property name="dataSource" ref="dataSource"></property>
+   </bean>
+   
+</beans>
