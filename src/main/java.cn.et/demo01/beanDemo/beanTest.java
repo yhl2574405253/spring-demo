@@ -11,7 +11,7 @@ public class beanTest {
 //		GenericXmlApplicationContext    通用 默认查找类路径
 //		WebApplicationContext web.xml中实例化
 		//容器对象
-		ApplicationContext context =new ClassPathXmlApplicationContext("beanSpring.xml");  //从类路径找文件
+		ApplicationContext context =new ClassPathXmlApplicationContext("demo01/beanDemo/beanSpring.xml");  //从类路径找文件
 
 		A a =(A) context.getBean("a1");
 		System.out.println(a);

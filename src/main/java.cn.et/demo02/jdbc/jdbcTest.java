@@ -12,7 +12,7 @@ import java.util.Map;
 public class jdbcTest {
 	static JdbcTemplate jt; //创建一个工具类
 	static{
-		ApplicationContext context = new ClassPathXmlApplicationContext("/jdbcSpring.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("demo02/jdbc/jdbcSpring.xml");
 		jt=(JdbcTemplate)context.getBean("jdbcTemplate");  //实例化工具类
 	}
 

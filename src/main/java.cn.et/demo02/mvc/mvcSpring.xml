@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans
-	xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="
+		xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xsi:schemaLocation="
 	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
 	http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-4.2.xsd
 	">
    
    <context:component-scan base-package="demo02.mvc" >
      	<!-- spring默认扫描自带注解 比如 Controller Service... 不希望扫描 排除他
-     		type="assignable" 排除指定的类
+     		type="assignable" 排除指定的类 expression 指定的类所在的位置
      		type="annotion" 表示排除某些带有指定注解的类
      	-->
    		<!--<context:exclude-filter type="assignable" expression="cn.et.day2.mvc.controller.MyController"/>-->

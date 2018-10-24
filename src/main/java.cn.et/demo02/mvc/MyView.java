@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class MyView {
     static ConfigurableApplicationContext  context;
     static{
-        context = new ClassPathXmlApplicationContext("/mvcSpring.xml");
+        context = new ClassPathXmlApplicationContext("/demo02/mvc/mvcSpring.xml");
     }
     private static MyController cont;
 

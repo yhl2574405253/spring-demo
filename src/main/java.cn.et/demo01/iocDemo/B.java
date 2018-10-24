@@ -2,7 +2,7 @@ package demo01.iocDemo;
 
 public class B {
 	private A a;
-	private String name;
+	private String bname;
 
 	public A getA() {
 		return a;
@@ -12,11 +12,11 @@ public class B {
 		this.a = a;
 	}
 
-	public String getName() {
-		return name;
+	public String getBname() {
+		return bname;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setBname(String bname) {
+		this.bname = bname;
 	}
 }

@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class AutowireTest {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("autowireSpring.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("demo01/autowire/autowireSpring.xml");
         B b =(B) context.getBean("b");
         System.out.println(b.getA().getName());
     }

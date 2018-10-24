@@ -10,8 +10,8 @@
         <property name="name" value="张三"></property>
     </bean>
     <!--对象赋值-->
-    <bean id="b" class="demo01.iocDemo.B">prototype
-        <property name="name" value="李四"></property>
+    <bean id="b" class="demo01.iocDemo.B">
+        <property name="bname" value="李四"></property>
         <property name="a" ref="a"></property>
     </bean>
 
