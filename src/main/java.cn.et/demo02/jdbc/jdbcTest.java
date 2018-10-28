@@ -15,7 +15,6 @@ public class jdbcTest {
 		ApplicationContext context = new ClassPathXmlApplicationContext("demo02/jdbc/jdbcSpring.xml");
 		jt=(JdbcTemplate)context.getBean("jdbcTemplate");  //实例化工具类
 	}
-
 	public static void main(String[] args) throws SQLException {
 		//容器对象 传入一个sql语句
 		query("select * from info");
