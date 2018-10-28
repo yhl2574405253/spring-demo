@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+	http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-4.2.xsd
+	http://www.springframework.org/schema/aop  http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+	">
+
+	<!-- 扫描配置文件 -->
+   <context:component-scan base-package="demo03.aop"></context:component-scan>
+
+   <aop:config>
+	   <!-- 定义切点(搜索条件) aop:pointcut 意思相当于跟if差不多 满足条件的就会进来
+              表示式   execution(返回值  包.类.方法(参数))
+              id 表示切点的名字
+        -->
+	   <aop:pointcut expression="execution(* demo03.*.AfHouseOwner.*(..))" id="myPointCut"/>
+		 <!--aop:aspect 指定消息所在的位置-->
+		<aop:aspect ref="myMessage">
+			<!-- 获取该类的前置通知 -->
+			<aop:before method="beforeSeek" pointcut-ref="myPointCut"/>
+			<!-- 获取该类的后置通知 -->
+			<aop:after method="afterSeek" pointcut-ref="myPointCut"/>
+			<!-- 获取该类的异常通知 -->
+			<aop:after-throwing method="throwException" pointcut-ref="myPointCut"/>
+		</aop:aspect>
+   </aop:config>
+</beans>
