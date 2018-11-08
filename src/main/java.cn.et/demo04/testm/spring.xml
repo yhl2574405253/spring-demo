@@ -46,16 +46,18 @@
 	   	            No existing transaction found for transaction marked with propagation 'mandatory'
 	   	       NEVER 父方法不能存在事务 有事务抛出如下异常:
 	   	            Existing transaction found for transaction marked with propagation 'never'
-	   	       
+
+
+
 	   	       isoLation="DEFAULT" 隔离级别
 	   	       DEFAULT       使用数据库本身的隔离级别ORACLE（读已提交）MYSQL(可重复读)
 			   READ_UNCOMMITTED spring 实现读未提交(脏读)
 			   READ_COMMITTED   spring 实现读已提交 (不可重复读+幻读)
 			   REPEATABLE_READ	spring 实现可重复读(幻读)
 			   SERIALIZABLE		spring 实现串行化(已解决)
-			   
+
+
 			   spring事物运行过程中 碰到运行时异常 自动回滚 非运行时异常不会回滚
-			   
 			   rollback-for="" 指定会自动回滚的非运行时异常  例:java.io.Exception交了这句话所有的运行时的异常也会回滚
 			   no-rollback-for=""  指定某些运行时抛出的异常 不回滚
 			   
