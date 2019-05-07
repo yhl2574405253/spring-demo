@@ -29,14 +29,16 @@ public class A {
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	/**
-	 * ��������bean֮�����
+	 * 容器创建bean之后调用
 	 */
 	public void ini(){
 		System.out.println("init");
 	}
+
 	/**
-	 * ��������beanʱ ����
+	 * 容器销毁bean时 调用
 	 */
 	public void des(){
 		System.out.println("destroy");
